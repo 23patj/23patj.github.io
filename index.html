@@ -41,5 +41,26 @@
   <a href="https://23patj.github.io/23patj.html">Page 2</a>
   <a href="https://www.youtube.com/watch?v=IVdJ6Z9jluc">Learn why MJ is greater than LeBron James</a>
   <a href="https://weather.com/weather/tenday/l/Bangkok+Thailand+THXX0002">Bangkok Weather</a>
+  <html>
+<body>
+    <h1>Exploring the DOM</h1>
+
+    <h2>Count Down: <span id="count">20</span></h2>
+    <button onclick="updateCount()">Next</button>
+
+    <script>
+        var i = 20;
+
+        function updateCount() {
+            i = i - 1;
+            countobj = document.getElementById("count");
+            console.log("Updating object: " + countobj);
+            countobj.innerHTML = "<b>" + i + "</b>";
+
+            if (i==0)// double "==" is equality 
+        }
+    </script>
+</body>
+</html>
 </body>  
 </html>

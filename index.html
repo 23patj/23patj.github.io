@@ -56,7 +56,7 @@
             countobj = document.getElementById("count");
             console.log("Updating object: " + countobj);
             countobj.innerHTML = "<b>" + i + "</b>";
-            //Change background color to a darker red as i decreases
+            //Make background color a darker red as i decreases
         var intensity = Math.max(20, 150 - (30 * ((20-i)/20)));
         document.body.style.backgroundColor = "rgb(" + intensity + ", 0, 0)";
             if (i<=0){ //single = assign, double == comparison

@@ -1,6 +1,6 @@
 <a href="https://23patj.github.io/">return to index</a>
 <title>Photo Carousel</title>
-<style>
+  <style>
     .carousel-container {
         width: 80%;
         margin: 0 auto;
@@ -25,7 +25,18 @@
         border-radius: 5px;
         cursor: pointer;
     }
-</style>
+    .rating-container {
+      text-align: center;
+    }
+    .star {
+      font-size: 24px;
+      color: gold;
+      cursor: pointer;
+    }
+    .rated {
+      color: orange;
+    }
+  </style>
 </head>
 <body>
 
@@ -38,9 +49,18 @@
 
 <button class="carousel-button" onclick="nextSlide()">Next</button>
 
+<div class="rating-container">
+  <span class="star" onclick="ratePhoto(1)">★</span>
+  <span class="star" onclick="ratePhoto(2)">★</span>
+  <span class="star" onclick="ratePhoto(3)">★</span>
+  <span class="star" onclick="ratePhoto(4)">★</span>
+  <span class="star" onclick="ratePhoto(5)">★</span>
+</div>
+
 <script>
     var currentSlide = 0;
     var slides = document.querySelectorAll('.carousel-slide');
+    var ratings = [0, 0, 0, 0]; // Store ratings for each photo
 
     function showSlide(index) {
         if (index >= 0 && index < slides.length) {
@@ -57,32 +77,21 @@
         }
         showSlide(nextIndex);
     }
-    <div class="rating-container">
-  <span class="star" onclick="ratePhoto(1)">★</span>
-  <span class="star" onclick="ratePhoto(2)">★</span>
-  <span class="star" onclick="ratePhoto(3)">★</span>
-  <span class="star" onclick="ratePhoto(4)">★</span>
-  <span class="star" onclick="ratePhoto(5)">★</span>
-</div>
 
-<script>
-  var ratings = [0, 0, 0, 0]; // Store ratings for each photo
+    function ratePhoto(index) {
+      // Update the rating for the current photo
+      ratings[currentSlide] = index;
 
-  function ratePhoto(index) {
-    // Update the rating for the current photo
-    ratings[currentSlide] = index;
-
-    // Update the star colors based on the rating
-    var stars = document.querySelectorAll('.star');
-    for (var i = 0; i < 5; i++) {
-      if (i < index) {
-        stars[i].classList.add('rated');
-      } else {
-        stars[i].classList.remove('rated');
+      // Update the star colors based on the rating
+      var stars = document.querySelectorAll('.star');
+      for (var i = 0; i < 5; i++) {
+        if (i < index) {
+          stars[i].classList.add('rated');
+        } else {
+          stars[i].classList.remove('rated');
+        }
       }
     }
-  }
-</script>
 </script>
 
 </body>

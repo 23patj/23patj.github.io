@@ -1,4 +1,34 @@
 <a href="https://23patj.github.io/">return to index</a>
+<title>Photo Carousel</title>
+<style>
+    .carousel-container {
+        width: 80%;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+    .carousel-slide {
+        display: none;
+        width: 100%;
+        height: auto;
+    }
+    .carousel-slide.active {
+        display: block;
+    }
+    .carousel-button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
 <div class="carousel-container">
     <img class="carousel-slide active" src="https://cdn.britannica.com/10/152310-050-5A09D74A/Sand-dunes-Sahara-Morocco-Merzouga.jpg" alt="First Photo">
     <img class="carousel-slide" src="https://www.rainforest-alliance.org/wp-content/uploads/2017/08/Ghanean-Rainforest-scaled.jpg.optimal.jpg" alt="Second Photo">
@@ -28,3 +58,6 @@
         showSlide(nextIndex);
     }
 </script>
+
+</body>
+</html>

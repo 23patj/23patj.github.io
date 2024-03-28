@@ -65,19 +65,20 @@
         }
     </script>
 <body> 
-  <button onclick="changeFontAndBackground()">Make website look cooler</button>
+  <button onclick="changeFontAndBackground()">Make website cooler</button>
 
-  <script>
-      function changeFontAndBackground() {
-          var elements = document.querySelectorAll('body *');
-  
-          for (var i = 0; i < elements.length; i++) {
-              elements[i].style.fontFamily = 'Comic Sans MS, cursive';
-          }
-  
-          document.body.style.backgroundImage = "url('https://www.rollingstone.com/wp-content/uploads/2020/08/goodfellasc.jpg')";
-      }
-  </script>
+<script>
+    function changeFontAndBackground() {
+        var elements = document.querySelectorAll('body *');
+
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.fontFamily = 'Comic Sans MS, cursive';
+            elements[i].style.color = 'white'; // Set text color to white
+        }
+
+        document.body.style.backgroundImage = "url('https://cdn.mos.cms.futurecdn.net/t9G5zm7aQmRHE9SmKPiMwn.jpeg')";
+    }
+</script>
 </script>
 </body>
 </body>

@@ -57,6 +57,32 @@
         }
         showSlide(nextIndex);
     }
+    <div class="rating-container">
+  <span class="star" onclick="ratePhoto(1)">★</span>
+  <span class="star" onclick="ratePhoto(2)">★</span>
+  <span class="star" onclick="ratePhoto(3)">★</span>
+  <span class="star" onclick="ratePhoto(4)">★</span>
+  <span class="star" onclick="ratePhoto(5)">★</span>
+</div>
+
+<script>
+  var ratings = [0, 0, 0, 0]; // Store ratings for each photo
+
+  function ratePhoto(index) {
+    // Update the rating for the current photo
+    ratings[currentSlide] = index;
+
+    // Update the star colors based on the rating
+    var stars = document.querySelectorAll('.star');
+    for (var i = 0; i < 5; i++) {
+      if (i < index) {
+        stars[i].classList.add('rated');
+      } else {
+        stars[i].classList.remove('rated');
+      }
+    }
+  }
+</script>
 </script>
 
 </body>

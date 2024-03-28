@@ -65,17 +65,19 @@
         }
     </script>
 <body> 
-    <h1> Change all text to comic sans </h1>
-    <button onclick="changeFont()">Change</button>
+  <button onclick="changeFontAndBackground()">Make website look cooler</button>
 
-<script>
-    function changeFont() {
-        var elements = document.querySelectorAll('body *');
-
-        for (var i = 0; i < elements.length; i++) {
-            elements[i].style.fontFamily = 'Comic Sans MS, cursive';
-        }
-    }
+  <script>
+      function changeFontAndBackground() {
+          var elements = document.querySelectorAll('body *');
+  
+          for (var i = 0; i < elements.length; i++) {
+              elements[i].style.fontFamily = 'Comic Sans MS, cursive';
+          }
+  
+          document.body.style.backgroundImage = "https://www.rollingstone.com/wp-content/uploads/2020/08/goodfellasc.jpg')";
+      }
+  </script>
 </script>
 </body>
 </body>

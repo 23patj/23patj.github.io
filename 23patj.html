@@ -1,16 +1,6 @@
 <a href="https://23patj.github.io/">return to index</a>
 <title>Photo Carousel</title>
   <style>
-    body {
-      font-family: 'Times New Roman', Times, serif; 
-      background-image: url('https://images.kinorium.com/movie/shot/109024/h280_48919628.jpg?21619545432'); 
-      background-size: cover; 
-      background-position: center; 
-      background-repeat: no-repeat; 
-      margin: 0;
-      padding: 0;
-    }
-
     .carousel-container {
         width: 80%;
         margin: 0 auto;
@@ -21,6 +11,7 @@
         display: none;
         width: 100%;
         height: auto;
+        transition: width 0.5s;
     }
     .carousel-slide.active {
         display: block;
@@ -35,16 +26,6 @@
         border-radius: 5px;
         cursor: pointer;
     }
-    .end-text {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 24px;
-        font-weight: bold;
-        color: white;
-        text-align: center;
-    }
   </style>
 </head>
 <body>
@@ -58,12 +39,9 @@
 
 <button class="carousel-button" onclick="nextSlide()">Next</button>
 
-<div id="endText" class="end-text"></div>
-
 <script>
     var currentSlide = 0;
     var slides = document.querySelectorAll('.carousel-slide');
-    var clickCounter = 0;
 
     function showSlide(index) {
         if (index >= 0 && index < slides.length) {
@@ -74,21 +52,18 @@
     }
 
     function nextSlide() {
-        clickCounter++;
         var nextIndex = currentSlide + 1;
         if (nextIndex >= slides.length) {
             nextIndex = 0; // Loop back to the first slide
         }
         showSlide(nextIndex);
 
-        if (clickCounter === 6) {
-            document.getElementById('endText').innerText = 'The End.';
-            document.body.style.backgroundImage = "url('https://example.com/your-image.jpg')";
-            document.body.style.backgroundSize = 'cover';
-            document.body.style.backgroundPosition = 'center';
-            document.body.style.backgroundRepeat = 'no-repeat';
-        }
+        slides.forEach(function(slide) {
+            var currentWidth = parseFloat(slide.style.width) || 100;
+            slide.style.width = (currentWidth * 0.92) + '%';
+        });
     }
+
 </script>
 
 </body>

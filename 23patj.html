@@ -1,1 +1,29 @@
 <a href="https://23patj.github.io/">return to index</a>
+<div class="carousel-container">
+    <img class="carousel-slide active" src="first-photo.jpg" alt="First Photo">
+    <img class="carousel-slide" src="second-photo.jpg" alt="Second Photo">
+    <img class="carousel-slide" src="third-photo.jpg" alt="Third Photo">
+</div>
+
+<button class="carousel-button" onclick="nextSlide()">Next</button>
+
+<script>
+    var currentSlide = 0;
+    var slides = document.querySelectorAll('.carousel-slide');
+
+    function showSlide(index) {
+        if (index >= 0 && index < slides.length) {
+            slides[currentSlide].classList.remove('active');
+            slides[index].classList.add('active');
+            currentSlide = index;
+        }
+    }
+
+    function nextSlide() {
+        var nextIndex = currentSlide + 1;
+        if (nextIndex >= slides.length) {
+            nextIndex = 0; // Loop back to the first slide
+        }
+        showSlide(nextIndex);
+    }
+</script>

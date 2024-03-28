@@ -77,34 +77,6 @@
 
         document.body.style.backgroundImage = "url('https://cdn.mos.cms.futurecdn.net/t9G5zm7aQmRHE9SmKPiMwn.jpeg')";
     }
-<div class="carousel-container">
-    <img class="carousel-slide active" src="https://cdn.britannica.com/10/152310-050-5A09D74A/Sand-dunes-Sahara-Morocco-Merzouga.jpg" alt="First Photo">
-    <img class="carousel-slide" src="https://www.rainforest-alliance.org/wp-content/uploads/2017/08/Ghanean-Rainforest-scaled.jpg.optimal.jpg" alt="Second Photo">
-    <img class="carousel-slide" src="https://cdn.mos.cms.futurecdn.net/w6MeY2GVkNphpYjFX9V3TX.jpg" alt="Third Photo">
-    <img class="carousel-slide" src="https://traveler.marriott.com/wp-content/uploads/2018/07/GI_535072049_MayaBay_PhiPhi_Boats.jpg" alt="Fourth Photo">
-</div>
-
-<button class="carousel-button" onclick="nextSlide()">Next</button>
-
-<script>
-    var currentSlide = 0;
-    var slides = document.querySelectorAll('.carousel-slide');
-
-    function showSlide(index) {
-        if (index >= 0 && index < slides.length) {
-            slides[currentSlide].classList.remove('active');
-            slides[index].classList.add('active');
-            currentSlide = index;
-        }
-    }
-
-    function nextSlide() {
-        var nextIndex = currentSlide + 1;
-        if (nextIndex >= slides.length) {
-            nextIndex = 0; // Loop back to the first slide
-        }
-        showSlide(nextIndex);
-    }
 </script>
 </script>
 </script>
